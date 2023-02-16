@@ -3010,7 +3010,7 @@
  False,
  False,
  False,
- [],
+ ['UPX'],
  None,
  None,
  None)
