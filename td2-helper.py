@@ -137,11 +137,11 @@ class TrainDriver2Helper:
             self.status_label.config(text="Text in Zwischenablage kopiert.")
         elif self.current_language == "Englisch":
             if anfrage == self.anfrage_options["Englisch"][0]:
-                text = f"Is the connection {anschluss} free for train {zugnummer}?"
+                text = f"Is the track {anschluss} free for train {zugnummer}?"
             elif anfrage == self.anfrage_options["Englisch"][1]:
-                text = f"Is the connection {anschluss} free for the delayed train {zugnummer}?"
+                text = f"Is the track {anschluss} free for the delayed train {zugnummer}?"
             elif anfrage == self.anfrage_options["Englisch"][2]:
-                text = f"Can I send train {zugnummer} to connection {anschluss} on the left track?"
+                text = f"Can I send train {zugnummer} via track {anschluss} on the left track?"
             self.status_label.config(text="Text copied to clipboard.")
         elif self.current_language == "Polnisch":
             if anfrage == self.anfrage_options["Polnisch"][0]:
