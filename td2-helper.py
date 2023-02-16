@@ -141,7 +141,7 @@ class TrainDriver2Helper:
             elif anfrage == self.anfrage_options["Englisch"][1]:
                 text = f"Is the track {anschluss} free for the delayed train {zugnummer}?"
             elif anfrage == self.anfrage_options["Englisch"][2]:
-                text = f"Can I send train {zugnummer} via track {anschluss} on the left track?"
+                text = f"Can I send train {zugnummer} via {anschluss} on the left track?"
             self.status_label.config(text="Text copied to clipboard.")
         elif self.current_language == "Polnisch":
             if anfrage == self.anfrage_options["Polnisch"][0]:
