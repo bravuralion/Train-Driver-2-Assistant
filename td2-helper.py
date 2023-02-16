@@ -57,6 +57,22 @@ class TrainDriver2Helper:
         self.status_label = tk.Label(self.root, text="")
         self.status_label.grid(row=5, column=0, columnspan=2, padx=5, pady=5)
 
+    def create_dropdown_menu(self):
+        self.anfrage_options = {
+            "Deutsch": ["Anfrage pünktlich", "Anfrage verspätet", "Anfrage linkes Gleis"],
+            "Englisch": ["Request on time", "Request delayed", "Request left track"],
+            "Polnisch": ["Zapytanie o czas", "Zapytanie o opóźnienie", "Zapytanie o lewy tor"]
+        }
+
+        self.anfrage_label.destroy()
+        self.anfrage_var.set(self.anfrage_options[self.current_language][0])
+
+        self.anfrage_label = tk.Label(self.root, text="Anfrage:")
+        self.anfrage_label.grid(row=2, column=0, padx=5, pady=5)
+
+        self.anfrage_menu.destroy()
+        self.anfrage_menu = tk.OptionMenu(self.root, self.anfrage_var, *self.anfrage_options[self.current_language])
+        self.anfrage_menu.grid(row=2, column=1, padx=5, pady=5)
 
 
     def set_language(self, language):
@@ -70,6 +86,8 @@ class TrainDriver2Helper:
             self.german_button.config(text="German")
             self.english_button.config(text="English")
             self.polish_button.config(text="Polish")
+            self.current_language = "Englisch"
+            self.create_dropdown_menu()
 
         elif language == "Polnisch":
             self.zugnummer_label.config(text="Numer pociągu:")
@@ -81,8 +99,10 @@ class TrainDriver2Helper:
             self.german_button.config(text="Niemiecki")
             self.english_button.config(text="Angielski")
             self.polish_button.config(text="Polski")
+            self.current_language = "Polnisch"
+            self.create_dropdown_menu()
 
-        elif language == "Deutsch":
+        else:
             self.zugnummer_label.config(text="Zugnummer:")
             self.anschluss_label.config(text="Anschluss:")
             self.anfrage_label.config(text="Anfrage:")
@@ -94,8 +114,12 @@ class TrainDriver2Helper:
             self.german_button.config(text="Deutsch")
             self.english_button.config(text="Englisch")
             self.polish_button.config(text="Polnisch")
+            self.current_language = "Deutsch"
+            self.create_dropdown_menu()
 
-        self.current_language = language
+
+            self.current_language = language
+
 
 
     def generate_text(self):
