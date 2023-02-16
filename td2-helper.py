@@ -110,6 +110,7 @@ class TrainDriver2Helper:
                 text = f"Ist der Anschluss {anschluss} für den verspäteten Zug {zugnummer} frei?"
             elif anfrage == self.anfrage_options["Deutsch"][2]:
                 text = f"Kann ich den Zug {zugnummer} beim Anschluss {anschluss} auf dem linken Gleis schicken?"
+            self.status_label.config(text="Text in Zwischenablage kopiert.")
         elif self.current_language == "Englisch":
             if anfrage == self.anfrage_options["Englisch"][0]:
                 text = f"Is the connection {anschluss} free for train {zugnummer}?"
@@ -117,6 +118,7 @@ class TrainDriver2Helper:
                 text = f"Is the connection {anschluss} free for the delayed train {zugnummer}?"
             elif anfrage == self.anfrage_options["Englisch"][2]:
                 text = f"Can I send train {zugnummer} to connection {anschluss} on the left track?"
+            self.status_label.config(text="Text copied to clipboard.")
         elif self.current_language == "Polnisch":
             if anfrage == self.anfrage_options["Polnisch"][0]:
                 text = f"Czy połączenie {anschluss} jest wolne dla pociągu {zugnummer}?"
@@ -124,9 +126,10 @@ class TrainDriver2Helper:
                 text = f"Czy połączenie {anschluss} jest wolne dla pociągu {zugnummer} z opóźnieniem?"
             elif anfrage == self.anfrage_options["Polnisch"][2]:
                 text = f"Czy mogę wysłać pociąg {zugnummer} do połączenia {anschluss} na lewym torze?"
+            self.status_label.config(text="Tekst skopiowany do schowka.")
 
         self.copy_to_clipboard(text)
-        self.status_label.config(text="Text in Zwischenablage kopiert.")
+
 
 
     def copy_to_clipboard(self, text):
