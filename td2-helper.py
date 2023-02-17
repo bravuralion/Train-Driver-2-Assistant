@@ -64,12 +64,6 @@ class TrainDriver2Helper:
             "Polnisch": ["Zapytanie o czas", "Zapytanie o opóźnienie", "Zapytanie o lewy tor"]
         }
 
-        self.anfrage_label.destroy()
-        self.anfrage_var.set(self.anfrage_options[self.current_language][0])
-
-        self.anfrage_label = tk.Label(self.root, text="Anfrage:")
-        self.anfrage_label.grid(row=2, column=0, padx=5, pady=5)
-
         self.anfrage_menu.destroy()
         self.anfrage_menu = tk.OptionMenu(self.root, self.anfrage_var, *self.anfrage_options[self.current_language])
         self.anfrage_menu.grid(row=2, column=1, padx=5, pady=5)
